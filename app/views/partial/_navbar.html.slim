@@ -12,16 +12,12 @@ nav.navbar.navbar-devise
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
         - if (!user_signed_in?)
-          li
-            a[href="#"]
-              | シッターになる
-          li
-            a[href="#"]
-              | 利用の流れ
+          li = link_to "シッターになる", new_listing_path
+          li = link_to "利用の流れ", new_listing_path
           li = link_to "アカウント作成", new_user_registration_path
           li = link_to "ログイン", new_user_session_path
         - else
-          li
+          li = link_to "シッターになる", new_listing_path
           li.dropdown
             a.dropdown-toggle[href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"]
               = current_user.email
