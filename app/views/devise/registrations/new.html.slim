@@ -1,0 +1,28 @@
+= render 'layouts/navbar'
+.container
+  .row
+    .col-md-6.col-md-offset-3.text-center
+      h2
+        | 登録
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
+        .form-group
+          = f.label :email
+          br
+          = f.email_field :email, :class => 'form-control', :placeholder => "email", autofocus: true
+        .from-group
+          = f.label :パスワード
+          - if @minimum_password_length
+            em
+              | (
+              = @minimum_password_length
+              | )文字以上
+          br
+          = f.password_field :password, :class => 'form-control', :placeholder => 'パスワード', autocomplete: "off"
+        .form-group
+          = f.label :パスワードの確認
+          br
+          = f.password_field :password_confirmation, :class => 'form-control', :placeholder => 'パスワードの確認', autocomplete: "off"
+        .actions
+          = f.submit "Sign up", class: "btn btn-success"
+      = render "devise/shared/links"
