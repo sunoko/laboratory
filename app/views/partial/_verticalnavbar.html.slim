@@ -7,24 +7,35 @@
         | 他の項目を編集する
     .navbar-collapse.collapse.sidebar-navbar-collapse
       ul.nav.navbar-nav
-        li
-          a[href="#"]
-            | 基本事項
-        li.active
-          a[href="#"]
-            | リスティングの内容
-        li
-          a[href="#"]
-            | 住所情報
-        li
-          a[href="#"]
-            | 料金
-        li
-          a[href="#"]
-            | 写真
-        li
-          a[href="#"]
-            | カレンダー
-        li
-          a[href="#"]
-            | 受取口座情報
+        |  <li class="
+        = 'active' if controller_name == 'listings' && action_name == 'basics'
+        | ">
+        = link_to "基本事項", manage_listing_basics_path(@listing)
+        |  <li class="
+        = 'active' if controller_name == 'listings' && action_name == 'description'
+        | ">
+        = link_to "リスティングの内容", manage_listing_description_path(@listing)
+        |  <li class="
+        = 'active' if controller_name == 'listings' && action_name == 'address'
+        | ">
+        = link_to "住所情報", manage_listing_address_path(@listing)
+        |  <li class="
+        = 'active' if controller_name == 'listings' && action_name == 'price'
+        | ">
+        = link_to "料金", manage_listing_price_path(@listing)
+        |  <li class="
+        = 'active' if controller_name == 'listings' && action_name == 'photos'
+        | ">
+        = link_to "写真", manage_listing_photos_path(@listing)
+        |  <li class="
+        = 'active' if controller_name == 'listings' && action_name == 'calendar'
+        | ">
+        = link_to "カレンダー", manage_listing_calendar_path(@listing)
+        |  <li class="
+        = 'active' if controller_name == 'listings' && action_name == 'bankaccount'
+        | ">
+        = link_to "受取口座情報", manage_listing_bankaccount_path(@listing)
+        |  <li class="
+        = 'active' if controller_name == 'listings' && action_name == 'publish'
+        | ">
+        = link_to "公開する", manage_listing_publish_path(@listing)
