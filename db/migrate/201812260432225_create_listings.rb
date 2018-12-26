@@ -8,11 +8,11 @@ class CreateListings < ActiveRecord::Migration[5.2]
       t.string :address
       t.string :listing_title
       t.text :listing_content
-      t.integer :price_per_night
+      t.integer :price_pernight
       t.boolean :active
-      t.references :user, foreign_key: true
+      t.references :user, index: true, foreign_key: true
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
