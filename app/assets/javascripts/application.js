@@ -14,10 +14,9 @@
 //= require activestorage
 //= require dropzone
 //= require bootstrap
-//= require jquery-ui/datepicker
-//= require jquery-ui/datepicker-ja
+//= require jquery-ui/widgets/datepicker
+//= require jquery-ui/i18n/datepicker-ja
 //= require private_pub
 //= require toastr
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
