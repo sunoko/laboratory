@@ -1,0 +1,31 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  charset: utf8
+  collation: utf8_unicode_ci
+  pool: 30
+  username: <%= ENV.fetch('DATABASE_USER') { 'root' } %>
+  password: <%= ENV.fetch('DATABASE_PASSWORD') { 'password' } %>
+  read_timeout: 120
+  write_timeout: 120
+
+development:
+  <<: *default
+  host: mysql
+  username: root
+  password: root
+  database: <%= ENV['DB_DATABASE'] %>
+
+test:
+  <<: *default
+  host: mysql
+  username: root
+  password: root
+  database: <%= ENV['DB_DATABASE_TEST'] %>
+
+production:
+  <<: *default
+  host: mysql
+  username: root
+  password: root
+  database: <%= ENV['DB_DATABASE'] %>
