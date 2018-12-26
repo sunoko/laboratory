@@ -18,7 +18,21 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'jquery-rails'
 
+# imported
+gem 'toastr-rails'
+gem 'omniauth-facebook'
+gem "paperclip"
+gem 'dropzonejs-rails'
+gem "figaro"
+gem 'aws-sdk'
+gem 'geocoder'
+gem 'jquery-ui-rails'
+gem 'stripe'
+gem "private_pub"
+gem 'ransack'
+
 group :development, :test do
+  # debug
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-byebug'
   gem 'pry-rails'
